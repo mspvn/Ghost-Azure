@@ -1,0 +1,3 @@
+FROM ghost:0.7.6
+
+VOLUME $GHOST_CONTENT
