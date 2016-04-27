@@ -1,0 +1,59 @@
+{{!< default}}
+
+{{! Navigation section }}
+<section id="navigation" class="header">
+    <div class="navbar navbar-inverse navbar-fixed-top navbar-trans" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/"><img src="{{asset "img/logo.png"}}" style="max-width: 150px;" alt="logo"></a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="/">Home</a></li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+{{! BLOG }}
+<section id="blog" class="blog parallax">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="text-center">
+                    <h3 class="text-uppercase">News and stories</h3>
+                    <p>From our Blog</p>
+                </div>
+            </div>
+        </div>
+       
+        <div class="min-h-40"></div>
+        {{#get "posts" limit="all" include="author,tags"}}
+        {{#foreach posts}}
+        <div class="margin-t-20 margin-b-30">
+            <div class="row about-us">
+                <div class="col-md-12">
+                    <div class="col-lg-5 col-md-5 col-sm-5 wow fadeInRight animated">
+                        <figure><img src="{{image}}" alt="" class="img-responsive"></figure>
+                    </div>
+                    <div class="col-lg-7 col-md-7 col-sm-7 wow fadeInLeft animated">
+                        <h2 class="carousel-text"><a href="{{url}}">{{title}}</a></h2>
+                        <br>
+                        <p>{{excerpt words="50"}}...</p>
+                        <a href="{{url}}" class="btn btn-custom">read more</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{/foreach}}
+        {{/get}}
+    </div>
+</section>

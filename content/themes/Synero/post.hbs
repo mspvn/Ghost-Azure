@@ -1,0 +1,49 @@
+{{!< default}}
+
+{{! Navigation section }}
+<section id="navigation" class="header">
+    <div class="navbar navbar-inverse navbar-fixed-top navbar-trans" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/"><img src="{{asset "img/logo.png"}}" style="max-width: 150px;" alt="logo"></a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/blog">Blog</a></li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+{{#post}}
+
+<header class="blog-header {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}" id="blog">
+</header>
+<main class="blog-post">
+    <article class="container">
+        <header class="row ">
+            <div class="col-md-8 col-sm-8 col-md-offset-2 col-sm-offset-2 about-us">
+                <div class="wow fadeInLeft animated">
+                    <h2>{{title}}<strong><span></span></strong></h2>
+                    <i class="fa fa-calendar margin-b-30"></i> {{date format="DD MMMM YYYY"}}
+                    <br/>
+                </div>
+            </div>
+        </header>
+        <div class="row">
+            <div class="col-md-8 col-sm-8 col-md-offset-2 col-sm-offset-2">
+            {{content}}
+            </div>
+        </div>
+    </article>
+</main>
+{{/post}}
